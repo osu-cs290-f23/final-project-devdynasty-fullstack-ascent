@@ -1,2 +1,18 @@
 body {
+    margin: 0;
+    color: white;
+}
+
+canvas {
+    z-index: 0;
+    position: fixed;
+}
+
+.content {
+    z-index: 1;  /* Make content sit on top of canvas */
+    position: fixed;
+}
+.test {
+    color: red;
+    margin: 0;
 }
