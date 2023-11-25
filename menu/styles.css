@@ -1,0 +1,47 @@
+.sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background: black;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: orange;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover{
+    color: #818181;
+}
+
+.sidenav .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+#main{
+    transition: margin-left 0.5s;
+    padding: 20px; 
+}
