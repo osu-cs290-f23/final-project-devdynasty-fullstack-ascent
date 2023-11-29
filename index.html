@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" type="text/css" href="/public/src/style.css">
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>DevDynasty</title>
+		<style>
+			body { margin: 0; }
+		</style>
+		<!-- 
+			Import map is not available in all browsers.
+			This is necessary to serve the three path so that other imports can access it. 
+		-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/21.0.0/tween.umd.js" integrity="sha512-iPPs+A0ew4z+jybQ1r6HPj5b8zV8zaw6TpfGn/qqntA480gp6HDfUJGp1ni46LXrItwnTvYlg80h1NIkC4pf6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "./node_modules/three/build/three.module.js",
+					"tween": "./node_modules/@tweenjs/tween.js"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- Canvas is necessary to hold a scene  -->
+		<canvas id="background"></canvas>
+		<script type="module" src="/public/src/main.js"></script>
+	</body>
+</html>
