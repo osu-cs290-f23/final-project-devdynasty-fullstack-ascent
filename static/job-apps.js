@@ -1,6 +1,6 @@
-var THREE = require("three")
-var GLTFLoader = require("three/addons/loaders/GLTFLoader.js")
-var OrbitControls = require("three/examples/jsm/controls/OrbitControls")
+import * as THREE from "three"
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 
 // Global variables
@@ -16,14 +16,6 @@ const camera = new THREE.PerspectiveCamera(FOV_deg, aspect_ratio, near_clip, far
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.prepend(renderer.domElement);  // this is a <canvas> element
-
-/*
-// Add cube
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-*/
 
 // Add light
 var alight = new THREE.AmbientLight(0x404040, 100);
@@ -46,15 +38,7 @@ controls.update();
 function animate() {
     requestAnimationFrame(animate);
     controls.update();
-
-    // animation here
-    /*
-    cube.rotation.x += 5;
-    cube.rotation.y += 5;
-    */
-
     renderer.render(scene, camera);
 }
 
 animate();
-
