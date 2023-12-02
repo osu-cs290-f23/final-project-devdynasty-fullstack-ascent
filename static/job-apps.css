@@ -1,6 +1,8 @@
 body {
     margin: 0;
     color: white;
+    max-height: 100%;
+    height: 100%;
 }
 
 canvas {
@@ -14,7 +16,7 @@ canvas {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: auto;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,15 +30,18 @@ canvas {
     background-color: slategray;
     margin: 1%;
     width: 100%;
+    height: 20%;
     padding: 1%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .jobs-container {
     flex-grow: 5;
     display: flex;
+    height: 80%;
 }
 
 .job-container {
@@ -44,35 +49,74 @@ canvas {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     flex-direction: column;
-    width: auto;
+    overflow-y: scroll;
+    width: 100%;
     height: auto;
+    max-height: 100%;
     background-color: rgba(0, 234, 255, 0.9);
-    border-radius: 50px;
-    padding: 1%;
+    border-radius: 30px;
+    padding: 30px;
     margin: 2%;
     /*
     TODO: Make computer screen glow
     */
 }
 
+.job-two-column {
+    display: inline-flex;
+    align-items: top;
+    justify-content: left;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.job-two-column-left {
+    width: auto;
+    flex-grow: 1;
+    display: inline-block;
+    margin-left: 0;
+}
+.job-two-column-right {
+    width: auto;
+    flex-grow: 5;
+    display: inline-block;
+}
+
 h1 {
     color: darkslateblue;
+    width: 100%;
 }
 
 h2 {
     color: navy;
     text-align: center;
+    font-size: 20px;
+    width: 100%;
 }
 
 h3 {
     color: cadetblue;
     text-align: left;
+    /* Match with <ul> */
+    font-size: inherit;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
 }
 
 p {
     color: antiquewhite;
+    width: 100%;
 }
 
+ul {
+    text-align: left;
+    width: auto;
+}
 
+footer {
+    color: slategray;
+}
