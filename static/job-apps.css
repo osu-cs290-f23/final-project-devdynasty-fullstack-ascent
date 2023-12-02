@@ -57,7 +57,7 @@ canvas {
     max-height: 100%;
     background-color: rgba(0, 234, 255, 0.9);
     border-radius: 30px;
-    padding: 30px;
+    padding: 35px;
     margin: 2%;
     /*
     TODO: Make computer screen glow
@@ -73,16 +73,20 @@ canvas {
     height: auto;
 }
 
-.job-two-column-left {
+.job-two-column-small {
     width: auto;
     flex-grow: 1;
     display: inline-block;
-    margin-left: 0;
 }
-.job-two-column-right {
+.job-two-column-large {
     width: auto;
     flex-grow: 5;
     display: inline-block;
+}
+
+.apply-button {
+    width: min-content;
+    height: min-content;
 }
 
 h1 {
@@ -119,4 +123,14 @@ ul {
 
 footer {
     color: slategray;
+}
+
+button {
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    border-color: bisque;
+    font-size: 25px;
+    margin: 35px;
+    margin-right: 0;
+    padding: 30px;
 }
