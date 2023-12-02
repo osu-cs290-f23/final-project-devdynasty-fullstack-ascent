@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+var THREE = require("three")
+var GLTFLoader = require("three/addons/loaders/GLTFLoader.js")
+var OrbitControls = require("three/examples/jsm/controls/OrbitControls")
 
 
 // Global variables
@@ -11,7 +11,7 @@ const far_clip = 1000;
 
 // Setup
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xff0000);
+scene.background = new THREE.Color(0x8b92ad);
 const camera = new THREE.PerspectiveCamera(FOV_deg, aspect_ratio, near_clip, far_clip);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
