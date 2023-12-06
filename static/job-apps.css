@@ -134,3 +134,7 @@ button {
     margin-right: 0;
     padding: 30px;
 }
+
+button:hover {
+    cursor: pointer;
+}
