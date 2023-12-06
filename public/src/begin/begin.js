@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { LoadGLTFByPath } from './Helpers/ModelHelper.js'
+import { LoadGLTFByPath } from '../../../lib/Helpers/ModelHelper.js'
 
 //Renderer does the job of rendering the graphics
 let renderer = new THREE.WebGLRenderer({
