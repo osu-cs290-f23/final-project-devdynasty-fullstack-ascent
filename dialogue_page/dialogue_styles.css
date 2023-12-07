@@ -13,9 +13,9 @@ body{
     position: fixed;
     /* adjust bottom later */
     bottom: 80px;
-    width: 75%;
+    width: 65%;
     /* playing with the idea of making the containers transparent  */
-    background-color: rgba(0, 0, 0, 0.687);
+    background-color: rgba(0, 0, 0, 0.334);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
