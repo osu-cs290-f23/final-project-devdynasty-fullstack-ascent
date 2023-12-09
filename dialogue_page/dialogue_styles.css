@@ -1,24 +1,30 @@
 body{
-    margin: 5px;
+    margin: 0;
     padding: 0;
     /* change font when group decides on one */
     font-family: sans-serif;
-    background-color: orange;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 #dialogueBox-container{
-    position: fixed;
-    /* adjust bottom later */
-    bottom: 80px;
-    width: 65%;
+    width: 80%;
     /* playing with the idea of making the containers transparent  */
-    background-color: rgba(0, 0, 0, 0.334);
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 128, 0, 0.722);
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255, 128, 0, 0.722);
     border-radius: 10px;
+    margin: auto;
 }
 
 #dialogueBox-container p{
@@ -29,21 +35,20 @@ body{
 }
 
 #choices-container{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: orange;
-    padding: 10px;
     display: flex;
-    justify-content:space-around;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 128, 0, 0.722);
 }
 
 .choice-buttons{
-    padding: 10px 20px;
-    background: black;
+    flex-grow: 1;
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
     color: white;
-    border: none;
-    /* 10 or 100? for radius*/
+    /* border: 3px white; */
     border-radius: 10px;
     cursor: pointer;
 }
