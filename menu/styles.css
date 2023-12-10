@@ -37,7 +37,16 @@
     text-align: center;
 }
 
-.nav-links a, .sidenav .credits-section a{
+.nav-links a, .sidenav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: orange;
+    display: block;
+    transition: 0.3s;
+}
+
+.credits-section a{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: medium;
