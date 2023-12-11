@@ -18,11 +18,11 @@ body{
 }
 
 #dialogueBox-container{
-    width: 80%;
-    /* playing with the idea of making the containers transparent  */
-    background-color: rgba(255, 128, 0, 0.722);
+    max-width: 80%;
+    /* playing with the idea of making the containers transparent using the slider */
+    background-color: rgba(255, 128, 0, 0.8);
     padding: 15px;
-    box-shadow: 0 0 10px rgba(255, 128, 0, 0.722);
+    box-shadow: 0 0 10px rgba(255, 128, 0, 0.9);
     border-radius: 10px;
     margin: auto;
 }
@@ -31,24 +31,40 @@ body{
     /* adjust font size after seeing how much text */
     font-size: small;
     font-variant: small-caps;
+    line-height: 1.6;
     color: white;
 }
 
 #choices-container{
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    justify-content: space-between;
+    width: 90%;
     padding: 10px;
-    background-color: rgba(255, 128, 0, 0.722);
+    background-color: rgba(255, 128, 0, 0.8);
+    margin-bottom: 10%;
+    border-radius: 10px;
+}
+
+.choice-group{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .choice-buttons{
     flex-grow: 1;
     margin: 10px;
     padding: 10px;
-    background-color: black;
+    background: linear-gradient(to bottom, #555, #333);
     color: white;
-    /* border: 3px white; */
+    border: 2px solid whitesmoke;
     border-radius: 10px;
     cursor: pointer;
+    /* opacity: 0; */
+}
+
+.choice-buttons:hover{
+    background: linear-gradient(to bottom, #777, #555);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }

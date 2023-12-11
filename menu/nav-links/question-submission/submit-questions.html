@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="[eventual file goes here]"> -->
+        <link rel="stylesheet" href="/menu/nav-links/question-submission/submission-styles.css">
         <title>Suggest a Question</title>
     </head>
 
     <body>
+        <script src="submission-script.js"></script>
         <div class="submission-container">
             <h2>Submit a Question</h2>
             <form id="submission-form">
@@ -17,8 +18,14 @@
                 <label for="correct-answer">What's the correct answer:</label>
                 <input type="text" id="correct-answer" name="correct-answer" required>
 
-                
+                <label for="wrong-answers">Enter incorrect answers (input 3 to 5 wrong answers separated by comma):</label>
+                <input type="text" id="wrong-answers" name="wrong-answers" required>
+
+                <button type="button" onclick="submitQuestion()">Submit your question</button>
             </form>
+        </div>
+        <div class="back-button">
+            <button type="button" onclick="goBack()">Back</button>
         </div>
     </body>
 
