@@ -16,6 +16,22 @@
     font-weight: normal;
 }
 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100%}
+}
+
+@keyframes blinking {
+    0% { border-right-color: transparent }
+    50% { border-right-color: white }
+    100% { border-right-color: transparent } 
+}
+
+@keyframes fade-in{
+    from { opacity: 0 }
+    to {  opacity: 100% }
+}
+
 
 canvas {
     position: fixed;
@@ -46,8 +62,6 @@ body {
     height: vh;
     width: vw;
 }
-
-
 
 button {
     font-family: 'sourcecode';
@@ -105,6 +119,11 @@ p{
     margin-top: 58vh; 
 }
 
+.apply-button-container {
+    animation-delay: 8s;
+    animation: fade-in 8s forwards;
+}
+
 .typed{
     overflow: hidden;
     white-space: nowrap;
@@ -117,18 +136,4 @@ p{
     animation-fill-mode: forwards;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100%}
-}
 
-@keyframes blinking {
-    0% { border-right-color: transparent }
-    50% { border-right-color: white }
-    100% { border-right-color: transparent } 
-}
-
-@keyframes fade-in{
-    from { opacity: 0 }
-    to {  opacity: 100% }
-}

@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-// import { LoadGLTFByPath } from './Helpers/ModelHelper.js'
+import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 //Renderer does the job of rendering the graphics
 let renderer = new THREE.WebGLRenderer({
@@ -9,11 +9,7 @@ let renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 
-// const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000 );
-// scene.add(camera);
-// let camera;
 let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-// scene.add(camera); // Add the camera to the scene
 
 // refer to: https://youtu.be/r4bepZ2PEUw?si=Xo4HgSrk7DkqZpu_
 window.addEventListener('resize', function(){
@@ -40,15 +36,10 @@ renderer.setClearColor(0xffffff, 0);
 renderer.outputColorSpace = THREE.SRGBColorSpace 
 
 const scene = new THREE.Scene();
-
 let cameraList = [];
-
-// let camera;
-
 let mixer;
 
 // camera movement - https://youtu.be/bfqlPHI3TzE?si=3ufLoN5lCDsp5KVn
-
 let mouseX = 0;
 let mouseY = 0;
 
@@ -71,12 +62,6 @@ document.addEventListener('mousemove', function(e){
   targetLookAt.x = mouseX;
   targetLookAt.y = -mouseY;
 })
-
-
-
-
-// I'M GOING TO NEED TO MAKE THE MODEL LOADER LOCAL TO MAIN.JS TO CONTROL ANIMATIONS
-import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 const scenePath = 'public/models/scene.gltf'
 let model;
@@ -148,8 +133,8 @@ function retrieveListOfCameras(scene){
   // Start the animation loop after the model and cameras are loaded
   animate();
 }
-let onStart = true;
 
+let onStart = true;
 
 document.getElementById('begin-button').addEventListener('click', function(){
   onStart = false;
@@ -162,50 +147,13 @@ document.getElementById('begin-button').addEventListener('click', function(){
   const welcomeContainer = document.querySelector('.welcome-container');
   welcomeContainer.parentNode.removeChild(welcomeContainer);
 
-  console.log("Begin game");
+  // probably going to want a less exposing way to get here
+  setTimeout(function () {
+    window.location.href = 'public/job-apps/job-apps.html';
+  }, 1500);
 
-  // Create a new button element
-  const applyButton = document.createElement('button');
-  applyButton.type = 'button';
-  applyButton.id = 'begin-button';
-  applyButton.textContent = 'Apply';
-
-  // Create a new container div for the button
-  const buttonContainer = document.createElement('div');
-  buttonContainer.classList.add('start-button-container');
-  buttonContainer.appendChild(applyButton);
-
-  // Append the container to the body or any desired parent
-  document.body.appendChild(buttonContainer);
-
-  // Add event listener to the new button if needed
-  applyButton.addEventListener('click', function() {
-    window.location.href = 'public/job-apps.html';
-    // Your button click logic here
-  });
-
-  // // // Create a new button element
-  // const applyButton = document.createElement('button');
-  // applyButton.type = 'button';
-  // applyButton.id = 'begin-button';
-  // applyButton.textContent = 'Apply';
-
-  // // Create a container div for the button
-  // const buttonContainer = document.createElement('div');
-  // buttonContainer.classList.add('start-button-container');
-  // buttonContainer.appendChild(applyButton);
-
-  // // Append the container to the parent of welcomeContainer
-  // welcomeContainer.parentNode.appendChild(buttonContainer);
-
-  // // Add event listener to the new button if needed
-  // applyButton.addEventListener('click', function() {
-  //   window.location.href = 'public/job-apps.html';
-  //   // Your button click logic here
-  // });
-
-  // window.location.href = 'public/job-apps.html';
 });
+
 
 
 
@@ -228,9 +176,7 @@ function animate() {
   if(mixer){
     mixer.update(clock.getDelta());
   }
-  
-
-  
+    
   if(clock.elapsedTime >= 3.7 && onStart){
     // Update the camera position based on mouse movement
     camera.position.x += (mouseX - camera.position.x) * 0.001;
