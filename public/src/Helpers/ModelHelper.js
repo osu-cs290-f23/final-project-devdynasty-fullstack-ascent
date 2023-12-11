@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
-const scenePath = 'public/models/slowerscene.gltf'
+const scenePath = 'public/models/scenezoom.gltf'
 
 let mixer;
 
@@ -25,16 +25,18 @@ export const LoadGLTFByPath = (scene) => {
         const clip2 = THREE.AnimationClip.findByName(clips, 'headbob');
         const dog_move = mixer.clipAction(clip2);
 
-        // const clip3 = THREE.AnimationClip.findByName(clips, 'movingcamAction.001');
-        // const zoom_in = mixer.clipAction(clip3);
-
         camera_pan.play();
+        camera_pan.setLoop(THREE.LoopOnce);
         dog_move.play();
 
+
+        // const clip3 = THREE.AnimationClip.findByName(clips, 'movingcamAction.001');
+        // const zoom_in = mixer.clipAction(clip3);
+    
         // zoom_in.play();
         // zoom_in.setLoop(THREE.LoopOnce);
-
-        camera_pan.setLoop(THREE.LoopOnce);
+        
+        
 
         resolve(mixer);
       }, undefined, (error) => {
@@ -42,3 +44,15 @@ export const LoadGLTFByPath = (scene) => {
       });
     });
 };
+
+// export const cameraZoomAnimation = () => {
+//   if(mixer){
+//     // const clip3 = THREE.AnimationClip.findByName(clips, 'movingcamAction.001');
+//     if (mixer) {
+//       const clips = gltf.animations;
+//       const zoom_in = mixer.clipAction(THREE.AnimationClip.findByName(clips, 'movingcamAction.001'));
+//       zoom_in.play();
+//       zoom_in.setLoop(THREE.LoopOnce);
+//     }
+//   }
+// }
