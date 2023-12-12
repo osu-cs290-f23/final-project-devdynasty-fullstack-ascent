@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nextpage.css">
+    <title>Next Page</title>
+</head>
+<body>
+
+    <div>
+        <h1>Interview Result</h1>
+        <p id="resultMessage"></p>
+        <div id="buttonsContainer"></div>
+    </div>
+
+    <script>
+        // Retrieve and display the interview result from sessionStorage
+        const resultMessage = sessionStorage.getItem("interviewResult");
+        document.getElementById("resultMessage").innerText = resultMessage;
+
+        // Create buttons based on the interview result
+        const buttonsContainer = document.getElementById("buttonsContainer");
+
+        if (resultMessage.includes("Congratulations")) {
+            // User got the interview
+            const takeInterviewButton = document.createElement("button");
+            takeInterviewButton.textContent = "TAKE INTERVIEW";
+            takeInterviewButton.onclick = function () {
+                window.location.href = "interview.html";
+            };
+            buttonsContainer.appendChild(takeInterviewButton);
+        } else {
+            // User didn't get the interview
+            const goHomeButton = document.createElement("button");
+            goHomeButton.textContent = "GO HOME";
+            goHomeButton.onclick = function () {
+                window.location.href = "/";
+            };
+
+            const goBackToResumeButton = document.createElement("button");
+            goBackToResumeButton.textContent = "GO BACK TO RESUME PAGE";
+            goBackToResumeButton.onclick = function () {
+                window.location.href = "main.html";
+            };
+
+            buttonsContainer.appendChild(goHomeButton);
+            buttonsContainer.appendChild(goBackToResumeButton);
+        }
+    </script>
+
+</body>
+</html>

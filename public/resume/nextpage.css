@@ -1,0 +1,42 @@
+body {
+    font-family: 'sourcecode', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #FFA500; /* Orange text color */
+}
+
+div {
+    text-align: center;
+    margin-top: 20%;
+}
+
+h1 {
+    color: white; /* Change the heading color to white */
+}
+
+p {
+    color: #FFA500; /* Orange paragraph text color */
+    font-weight: bold;
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+#buttonsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #FFA500; /* Orange button background color */
+    color: #000; /* Black button text color */
+    padding: 10px 20px;
+    font-size: 16px; /* Adjust the font size as needed */
+    border: none;
+    border-radius: 20px; /* Round the corners of the button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFD700; /* Darker orange on hover */
+}
