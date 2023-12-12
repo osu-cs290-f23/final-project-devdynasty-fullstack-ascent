@@ -16,7 +16,7 @@ const badSkills3 = ["Portfolio Website", "To Do List App", "Social Media Metrics
 // Point system
 const pointSystem = {
     goodSkill: 1, // Points for each good skill
-    badSkill: -1, // Points for each bad skill
+    badSkill: 0, // Points for each bad skill
 };
 
 

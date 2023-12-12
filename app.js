@@ -16,6 +16,10 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/interview.html", function(req, res){
+  res.sendFile(__dirname + "/interview.html"); 
+})
+
 app.listen(8000, function () {
   console.log("Server is running on localhost8000");
 });
