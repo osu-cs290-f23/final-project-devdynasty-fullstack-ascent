@@ -2,7 +2,7 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 10px;
-    background-color: rgba(255, 128, 0, 0.8);;
+    background-color: rgba(255, 128, 0, 0.8);
   }
   
   .container{
@@ -27,6 +27,7 @@ body{
   label{
     margin-bottom: 8px;
     color: #555;
+    font-weight: 400;
   }
   
   textarea, input{
@@ -38,8 +39,9 @@ body{
   
   .submission-container button{
     padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #606d5d;
+    color: white;
+    font-weight: 700;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -48,8 +50,9 @@ body{
 
   .back-button button{
     padding: 10px;
-    background-color: #4caf50;
+    background-color: #606d5d;;
     color: #fff;
+    font-weight: 700;
     border: none;
     border-radius: 4px;
     margin-top: 3px;
@@ -58,6 +61,7 @@ body{
   }
   
   button:hover{
-    background-color: #45a049;
+    background-color: black;
+    color: #ff8000;
   }
   
