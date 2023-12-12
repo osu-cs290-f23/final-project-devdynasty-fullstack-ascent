@@ -1,5 +1,139 @@
+@font-face {
+    font-family: 'sourcecode';
+    src: url('Source_Code_Pro/static/SourceCodePro-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'sourcecode';
+    src: url('Source_Code_Pro/static/SourceCodePro-Light.ttf') format('truetype');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'sourcecode';
+    src: url('Source_Code_Pro/static/SourceCodePro-Regular.ttf') format ('truetype');
+    font-weight: normal;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100%}
+}
+
+@keyframes blinking {
+    0% { border-right-color: transparent }
+    50% { border-right-color: white }
+    100% { border-right-color: transparent } 
+}
+
+@keyframes fade-in{
+    from { opacity: 0 }
+    to {  opacity: 100% }
+}
+
+
 canvas {
     position: fixed;
     top: 0;
     left: 0;
+
+    /* TESTING */
+    z-index: 0;
 };
+
+/* AMISH CODE */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.welcome-container {
+    text-align: center;
+    z-index: 1;
+    animation: fade-in 3s forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+    height: vh;
+    width: vw;
+}
+
+button {
+    font-family: 'sourcecode';
+    font-weight: normal;
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: orangered;
+}
+
+.content {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.title {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1vh;
+    font-size: 13px;
+}
+
+h1{
+    color: white;
+    font-family: 'sourcecode';
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.description {
+    display: grid;
+    justify-content: center;
+    font-size: 12px;
+}
+
+p{
+    color: white;
+    font-family: 'sourcecode';
+    font-weight: lighter;   
+    width: 70vw;
+    margin: 0;
+}
+
+.start-button-container {
+    margin-top: 58vh; 
+}
+
+.apply-button-container {
+    animation-delay: 8s;
+    animation: fade-in 8s forwards;
+}
+
+.typed{
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid transparent; 
+    width: 0;
+    animation: typing 1.5s, blinking 1s infinite;
+    animation-duration: 1.5s;
+    animation-delay: 2.5s;
+    animation-timing-function: steps(30, end);
+    animation-fill-mode: forwards;
+}
+
+
