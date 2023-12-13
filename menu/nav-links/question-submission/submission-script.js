@@ -28,7 +28,14 @@ console.log(newQuestion);
 document.getElementById('submission-form').reset();
 
 function goBack(){
-    // need to figure out how to go back to previous screen
+    // two methods
+
+    //method 1: assuming that the submission script will take the user to a separate page we could do
+    /* window.history.back()*/
+    // this method functionally acts like if the user hit the back button. super simple
+
+    //method 2: redirect the user to the homepage to start the game
+    /* window.location.href = "/[homepage]" */
 }
 
 function generateRandomOptions(correctAnswer, wrongAnswers){
