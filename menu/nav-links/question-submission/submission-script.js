@@ -38,6 +38,7 @@ function goBack(){
     /* window.location.href = "/[homepage]" */
 }
 
+//full disclosure, I used chatGPT to help me create this function
 function generateRandomOptions(correctAnswer, wrongAnswers){
     // this shuffles the wrong answers that the user submitted so that it'll be slightly random each time
     var randomizeWrongAnswers = wrongAnswers.slice().sort(() => Math.random() - 0.5);
@@ -49,3 +50,21 @@ function generateRandomOptions(correctAnswer, wrongAnswers){
     return pickedThree.sort(() => Math.random() - 0.5);
 }
 
+// // Send the new question to the server
+// fetch('http://localhost:3000/submitQuestion',{
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(newQuestion),
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//     alert("Question submitted successfully!");
+//   })
+//   .catch((error) => {
+//     console.error('Error:', error);
+//     alert("Error submitting question. Please try again.");
+//   });
+  
