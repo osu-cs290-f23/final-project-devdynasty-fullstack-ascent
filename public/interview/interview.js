@@ -27,10 +27,12 @@ function checkAnswer(question, answer) {
         }),
     }).then(function (res) {
         if (res.status === 200) {
-            window.location.href("/" + res.body + ".html");
+            window.location.href = "/thankyou.html";
+        }
+        else if (res.status === 401) {
+            window.location.href = "/end.html"
         }
         else {
-
         alert("An internal error occurred...");
         }
     })

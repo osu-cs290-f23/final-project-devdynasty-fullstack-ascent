@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: black;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
 
         .end-container {
             text-align: center;
-            background-color: #fff;
+            background-color: black;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -70,17 +70,9 @@
 </head>
 <body>
     <div class="end-container">
-        <h1>You scored 90 points!</h1>
-        <h2>You excelled in these questions:</h2>
-        <ul>
-            <li>What would you prioritize in this situation?</li>
-            <li>Resume building</li>
+        <h1>You didn't get the offer.</h1>
+        <h2>Better luck next time!</h2>
 
-        </ul>
-        <h2 class="missed-questions">Here’s what you missed:</h2>
-        <ul>
-            <li>Put the following growth order functions in order from slowest to fastest growing.</li>
-        </ul>
         <div class="button-container">
             <button id="end-game" onclick="endGame()">End Game</button>
             <button id="restart-game" onclick="restartGame()">Restart Game</button>
@@ -90,12 +82,12 @@
     <script>
         function endGame() {
             // Redirect to the Thank You page
-            window.location.href = "thankyou.html";
+            window.location.href = "/thankyou.html";
         }
 
         function restartGame() {
             // Redirect to the index.html page
-            window.location.href = "index.html";
+            window.location.href = "/";
         }
     </script>
 </body>

@@ -1,3 +1,4 @@
+const fs = require("fs")
 const express = require("express");
 const exphbs = require('express-handlebars')
 
@@ -6,6 +7,7 @@ const app = express();
 
 app.engine("handlebars", exphbs.engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars")
+app.use(express.json())
 
 var data = require("./data.json")
 
@@ -81,17 +83,21 @@ app.use("/", express.static(resumeDir));
 var submitDir = path.join(__dirname, "public/submit-questions/")
 app.use("/", express.static(submitDir));
 
+var endDir = path.join(__dirname, "public/endings/")
+app.use("/", express.static(endDir));
+
 var menuDir = path.join(__dirname, "menu/")
 app.use("/", express.static(menuDir));
 
 app.post('/submit-questions', function (req, res, next) {
   console.log("body", req.body)
   if (req.body && req.body.question && req.body.correct && req.body.incorrect) {
-    data.push({
+    data.questions.push({
       question: req.body.question,
       correct: req.body.correct,
       incorrect: req.body.incorrect
     })
+    data.total++;
     fs.writeFile(
       "./data.json",
       JSON.stringify(data, null, 2),
@@ -117,20 +123,28 @@ app.post('/check-answer', function(req, res, next) {
     // get index in 'questions' array where the object has a 'question' matching the one in the body
     // https://www.tutorialrepublic.com/faq/how-to-find-an-object-by-property-value-in-an-array-of-javascript-objects.php
     var qIndex = data.questions.findIndex(item => item.question === req.body.question)
-    if (qindex === -1) {
+    if (qIndex === -1) {
       res.status(500).send(
         "Unable to find matching question"
       )
+      return;
     }
+    console.log(qIndex)
     if (data.questions[qIndex].correct === req.body.answer) {
       res.status(200).send(
-        "thankyou"
+        {
+        page: "thankyou"
+        }
       )
+      return
     }
     else {
-      res.status(200).send(
-        "end"
+      res.status(401).send(
+        {
+        page: "end"
+        }
       )
+      return
     }
   }
   else {
