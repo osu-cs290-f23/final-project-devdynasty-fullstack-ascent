@@ -19,9 +19,6 @@ app.use("/src", express.static(srcDir));
 var nodeModulesDir = path.join(__dirname, 'node_modules/');
 app.use('/node_modules', express.static(nodeModulesDir));
 
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
 
 /*
 app.get("/interview.html", function(req, res){
@@ -29,8 +26,17 @@ app.get("/interview.html", function(req, res){
 })
 */
 
+
+app.get('/job-apps', function (req, res, next) {
+  res.status(200).render("jobApps", {
+    css: "/job-apps.css",
+    title: "Job Roles"
+  })
+})
+
 var jobAppsDir = path.join(__dirname, "public/job-apps/")
-app.use("/job-apps", express.static(jobAppsDir));
+app.use("/", express.static(jobAppsDir));
+
 
 var resumeDir = path.join(__dirname, "public/resume/")
 app.use("/resume", express.static(resumeDir));
@@ -39,8 +45,15 @@ var submitDir = path.join(__dirname, "public/submit-questions/")
 app.use("/submit-questions", express.static(submitDir));
 
 var menuDir = path.join(__dirname, "menu/")
-app.use("/menu", express.static(menuDir));
+app.use("/", express.static(menuDir));
 
-app.listen(8000, function () {
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.listen(8000, function (err) {
+  if (err) {
+    throw err
+  }
   console.log("Server is running on localhost:8000");
 });
