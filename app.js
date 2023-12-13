@@ -20,13 +20,6 @@ var nodeModulesDir = path.join(__dirname, 'node_modules/');
 app.use('/node_modules', express.static(nodeModulesDir));
 
 
-/*
-app.get("/interview.html", function(req, res){
-  res.sendFile(__dirname + "/interview.html"); 
-})
-*/
-
-
 app.get('/job-apps', function (req, res, next) {
   res.status(200).render("jobApps", {
     css: "/job-apps.css",
@@ -122,6 +115,33 @@ app.post('/submit-questions', function (req, res, next) {
   else {
     res.status(400).send(
       "Requests need a JSON body with 'question', 'correct', and 'incorrect'"
+    )
+  }
+})
+
+app.post('/check-answer', function(req, res, next) {
+  console.log(req.body)
+  if (req.body && req.body.question && req.body.answer) {
+    var qIndex = data.questions.findIndex(req.body.question)
+    if (index === -1) {
+      res.status(500).send(
+        "Unable to find matching question"
+      )
+    }
+    if (data.questions[qIndex].correct === req.body.answer) {
+      res.status(200).send(
+        "thankyou"
+      )
+    }
+    else {
+      res.status(200).send(
+        "end"
+      )
+    }
+  }
+  else {
+    res.status(400).send(
+      "Requests need a JSON body with 'question' and 'answer'"
     )
   }
 })
