@@ -31,14 +31,14 @@
    <div class="resume-images-container">
             <!-- Resume Image -->
 
-            <div class="resume-image" onclick="expandImage()">
+            <div class="resume-image" onclick="expandImage('Job.png')">
                 <h2>Job 1 Details</h2>
                 <img src="Job.png" alt="Job 1 Description Poster">
             </div>
 
             <!-- Resume Image 2-->
 
-           <div class="resume-image" onclick="expandImage()">
+           <div class="resume-image" onclick="expandImage('Job2.webp')">
                 <h2>Job 2 Details</h2>
                 <img src="Job2.webp" alt="Job 2 Description Poster">
            </div>
@@ -175,14 +175,14 @@
 
     <script src="/resume.js"></script>
 
-    <script>
+     <script>
         // Function to expand the image and show the modal
-        function expandImage() {
+        function expandImage(imageSrc) {
             var modal = document.getElementById("imageModal");
             var image = document.getElementById("expandedImage");
-            var originalImage = document.querySelector(".resume-image img");
+        
 
-            image.src = originalImage.src;
+            image.src = imageSrc;
             modal.style.display = "flex";
         }
 
