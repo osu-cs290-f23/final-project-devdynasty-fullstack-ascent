@@ -30,16 +30,27 @@ app.get("/interview.html", function(req, res){
 app.get('/job-apps', function (req, res, next) {
   res.status(200).render("jobApps", {
     css: "/job-apps.css",
-    title: "Job Roles"
+    title: "Job Roles",
+    music: "/audio_files/Wanted(chosic.com).mp3"
   })
 })
 
 app.get('/resume', function (req, res, next) {
   res.status(200).render("resume", {
     css: "/resume.css",
-    title: "Create a Resume"
+    title: "Create a Resume",
+    music: "/audio_files/Wanted(chosic.com).mp3"
   })
 })
+
+app.get('/interview', function (req, res, next) {
+  res.status(200).render("interview", {
+    css: "/interview.css",
+    title: "Interview",
+    music: "/audio_files/robo-boss-encounter-theme-instrumental-176873.mp3"
+  })
+})
+
 
 app.get('/resume-results', function (req, res, next) {
   res.sendFile(__dirname + "/public/resume/resume-results.html");

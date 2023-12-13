@@ -87,7 +87,7 @@ function calculatePoints(goodSkills, mehSkills, userSkills) {
             // No points deducted for meh skills
 
         } else {
-            console.log(`Unknown skill: ${skill}`);
+            console.log('Unknown skill: ${skill}');
         }
     });
 
@@ -109,7 +109,7 @@ function checkInterviewOffer() {
     const overallPoints3 = calculatePoints(goodSkills3, mehSkills3,  projectsSkills);
 
     const hasInterviewOffer = overallPoints1 >= 3 && overallPoints2 >= 3 && overallPoints3 >= 3;
-
+    console.log(overallPoints1, "~~~", overallPoints2, "~~~", overallPoints3);
     redirectToNextPage(hasInterviewOffer);
 }
 

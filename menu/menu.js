@@ -7,7 +7,7 @@ function closeNav(){
 }
 
 function openSubmissionModal(){
-    var popup = window.open("/menu/nav-links/question-submission/submit-questions.html", "Submit your question!", "width=600, height=400");
+    var popup = window.open("/submit-questions", "Submit your question!", "width=600, height=400");
 }
 
 document.querySelector('.nav-links a').addEventListener('click', openSubmissionModal);
