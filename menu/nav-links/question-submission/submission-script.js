@@ -25,19 +25,6 @@ var newQuestion = {
 
 console.log(newQuestion);
 
-document.getElementById('submission-form').reset();
-
-function goBack(){
-    // two methods
-
-    //method 1: assuming that the submission script will take the user to a separate page we could do
-    /* window.history.back()*/
-    // this method functionally acts like if the user hit the back button. super simple
-
-    //method 2: redirect the user to the homepage to start the game
-    /* window.location.href = "/[homepage]" */
-}
-
 //full disclosure, I used chatGPT to help me create this function
 function generateRandomOptions(correctAnswer, wrongAnswers){
     // this shuffles the wrong answers that the user submitted so that it'll be slightly random each time
@@ -50,7 +37,7 @@ function generateRandomOptions(correctAnswer, wrongAnswers){
     return pickedThree.sort(() => Math.random() - 0.5);
 }
 
-// // Send the new question to the server
+// // update the json file and send to server
 // fetch('http://localhost:3000/submitQuestion',{
 //     method: 'POST',
 //     headers: {
