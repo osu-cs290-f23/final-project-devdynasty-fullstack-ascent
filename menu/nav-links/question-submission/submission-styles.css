@@ -1,0 +1,68 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    color: orange;
+  }
+  
+  .container{
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1{
+    text-align: center;
+    color: #333;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label{
+    margin-bottom: 8px;
+    color: orange;
+    font-weight: 400;
+  }
+  
+  textarea, input{
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submission-container button{
+    padding: 10px;
+    background-color: #606d5d;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid black;
+  }
+
+  .back-button button{
+    padding: 10px;
+    background-color: #606d5d;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    margin-top: 3px;
+    cursor: pointer;
+    border: 2px solid black;
+  }
+  
+  button:hover{
+    background-color: orange;
+    color: black;
+  }
+  
