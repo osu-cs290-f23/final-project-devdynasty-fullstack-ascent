@@ -1,4 +1,12 @@
 {
+  "name": "devdynasty",
+  "scripts": {
+    "build": "echo 'Nothing to build yet'",
+    "prestart": "npm run build",
+    "start": "node server.js",
+    "predev": "npm run build",
+    "dev": "npx vite --host"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "node": "^21.2.0",
