@@ -96,7 +96,7 @@ function calculatePoints(goodSkills, mehSkills, userSkills) {
 
 function redirectToNextPage(hasInterviewOffer) {
     sessionStorage.setItem("interviewResult", hasInterviewOffer ? "Congratulations! You got an interview offer!" : "Sorry, you did not qualify for an interview offer.");
-    window.location.href = "resume-results.html";
+    window.location.href = "/resume-results";
 }
 
 function checkInterviewOffer() {

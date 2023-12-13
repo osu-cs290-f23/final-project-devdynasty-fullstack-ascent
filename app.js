@@ -34,18 +34,32 @@ app.get('/job-apps', function (req, res, next) {
   })
 })
 
+app.get('/resume', function (req, res, next) {
+  res.status(200).render("resume", {
+    css: "/resume.css",
+    title: "Create a Resume"
+  })
+})
+
+app.get('/resume-results', function (req, res, next) {
+  res.sendFile(__dirname + "/public/resume/resume-results.html");
+})
+
+
 var jobAppsDir = path.join(__dirname, "public/job-apps/")
 app.use("/", express.static(jobAppsDir));
 
 
 var resumeDir = path.join(__dirname, "public/resume/")
-app.use("/resume", express.static(resumeDir));
+app.use("/", express.static(resumeDir));
 
 var submitDir = path.join(__dirname, "public/submit-questions/")
 app.use("/submit-questions", express.static(submitDir));
 
 var menuDir = path.join(__dirname, "menu/")
 app.use("/", express.static(menuDir));
+
+app.use("/", express.static("/"));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");

@@ -160,7 +160,7 @@ document.getElementById('begin-button').addEventListener('click', function(){
 
   // Probably going to want a less exposing way to get here
   setTimeout(function () {
-    window.location.href = 'job-apps/job-apps.html';
+    window.location.href = '/job-apps';
   }, 1500);
 
 });

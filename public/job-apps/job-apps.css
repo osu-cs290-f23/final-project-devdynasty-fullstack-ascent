@@ -18,6 +18,9 @@ body {
     animation: fade-in 3s forwards;
 }
 
+span {
+    color: #FFA500; /* Orange text color */
+}
 canvas {
     position: fixed;
     top: 0;
