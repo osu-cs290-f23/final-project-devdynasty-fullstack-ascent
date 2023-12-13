@@ -92,10 +92,10 @@ app.get("/", function (req, res) {
 
 
 app.post('/submit-questions', function (req, res, next) {
-  console.log(req.body)
+  console.log("body", req.body)
   var totalNum = data.total
   if (req.body && req.body.question && req.body.correct && req.body.incorrect) {
-    data[total+1].push({
+    data.push({
       question: req.body.question,
       correct: req.body.correct,
       incorrect: req.body.incorrect
