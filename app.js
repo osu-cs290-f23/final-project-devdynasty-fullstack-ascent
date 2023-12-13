@@ -44,10 +44,20 @@ app.get('/resume', function (req, res, next) {
 })
 
 app.get('/interview', function (req, res, next) {
+  var totalNum = data["total"]
+  var qData = data[questions][Math.random() * totalNum]  // get one rand q
+  var qs = qData["correct"].concat(["incorrect"])
+  var qs_shuffled = qs.sort(() => Math.random() - 0.5);  // https://stackoverflow.com/q/2450954 comment from SaboSuke
+  console.log(qs)
   res.status(200).render("interview", {
     css: "/interview.css",
     title: "Interview",
-    music: "/audio_files/robo-boss-encounter-theme-instrumental-176873.mp3"
+    music: "/audio_files/robo-boss-encounter-theme-instrumental-176873.mp3",
+    question: qData["question"],
+    c1: qs_shuffled[0],
+    c2: qs_shuffled[1],
+    c3: qs_shuffled[2],
+    c4: qs_shuffled[3]
   })
 })
 
@@ -81,8 +91,9 @@ app.get("/", function (req, res) {
 
 
 app.post('/submit-questions', function (req, res, next) {
-  var question = req.body.question
+  console.log(req.body)
   if (req.body && req.body.question && req.body.correct && req.body.incorrect) {
+    var question = req.body.question
     data[question].push({
       correct: req.body.correct,
       incorrect: req.body.incorrect
