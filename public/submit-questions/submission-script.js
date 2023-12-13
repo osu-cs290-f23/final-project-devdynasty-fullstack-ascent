@@ -19,14 +19,14 @@ function submitQuestion(){
 // update the json file and send to server
 fetch('/submit-questions', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify( {
         question: questionText,
         correct: correctAnswer,
         incorrect: wrongAnswers
     }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   }).then(function (res) {
     if (res.status === 200) {
 
