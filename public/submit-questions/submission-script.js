@@ -9,10 +9,52 @@ function submitQuestion(){
     ** this is an error check again the user either not putting enough distractor questions or 
     ** if they put more than five potential distractor questiosn
     */
-    if(wrongAnswers.length < 3 || wrongAnswers.length >= 5){
+    if(wrongAnswers.length < 3 || wrongAnswers.length > 5){
         alert("Please provide 3 to 5 incorrect answers for your question.");
+        return;
     }
+
+    // great!
+    
+// update the json file and send to server
+fetch('/submit-questions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify( {
+        question: questionText,
+        correct: correctAnswer,
+        incorrect: wrongAnswers
+    }),
+  }).then(function (res) {
+    if (res.status === 200) {
+
+    alert("Question submitted successfully!");
+    }
+    else {
+
+    alert("Error submitting question. Please try again.");
+    }
+  })
+
+  /*
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    alert("Question submitted successfully!");
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert("Error submitting question. Please try again.");
+  });
+  */
+
+
 }
+
+
+/*
 
 questionCounter++;
 
@@ -35,22 +77,5 @@ function generateRandomOptions(correctAnswer, wrongAnswers){
 
     return pickedThree.sort(() => Math.random() - 0.5);
 }
+*/
 
-// update the json file and send to server
-fetch('http://localhost:8000/submit-questions',{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(newQuestion),
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    alert("Question submitted successfully!");
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-    alert("Error submitting question. Please try again.");
-  });
-  
