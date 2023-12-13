@@ -44,16 +44,21 @@ app.get('/resume', function (req, res, next) {
 })
 
 app.get('/interview', function (req, res, next) {
-  var totalNum = data[total]
-  var qData = data[questions][Math.random() * totalNum]  // get one rand q
-  var qs = qData["correct"].concat(["incorrect"])
+  var totalNum = data.total
+  console.log(totalNum)
+  var index = Math.floor(Math.random() * totalNum)
+  console.log(index)
+  var qData = data.questions[index]  // get one rand q
+  console.log(qData);
+  var qs = [qData.correct].concat(qData.incorrect)
+  console.log(qs)
   var qs_shuffled = qs.sort(() => Math.random() - 0.5);  // https://stackoverflow.com/q/2450954 comment from SaboSuke
   console.log(qs)
   res.status(200).render("interview", {
     css: "/interview.css",
     title: "Interview",
     music: "/audio_files/robo-boss-encounter-theme-instrumental-176873.mp3",
-    question: qData[question],
+    question: data.questions[index].question,
     c1: qs_shuffled[0],
     c2: qs_shuffled[1],
     c3: qs_shuffled[2],
@@ -92,7 +97,7 @@ app.get("/", function (req, res) {
 
 app.post('/submit-questions', function (req, res, next) {
   console.log(req.body)
-  var totalNum = data[total]
+  var totalNum = data.total
   if (req.body && req.body.question && req.body.correct && req.body.incorrect) {
     data[total+1].push({
       question: req.body.question,
