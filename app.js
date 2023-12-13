@@ -35,6 +35,12 @@ app.use("/job-apps", express.static(jobAppsDir));
 var resumeDir = path.join(__dirname, "public/resume/")
 app.use("/resume", express.static(resumeDir));
 
+var submitDir = path.join(__dirname, "public/submit-questions/")
+app.use("/submit-questions", express.static(submitDir));
+
+var menuDir = path.join(__dirname, "menu/")
+app.use("/menu", express.static(menuDir));
+
 app.listen(8000, function () {
   console.log("Server is running on localhost:8000");
 });

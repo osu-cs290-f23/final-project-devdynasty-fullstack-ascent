@@ -11,8 +11,7 @@ function submitQuestion(){
     */
     if(wrongAnswers.length < 3 || wrongAnswers.length >= 5){
         alert("Please provide 3 to 5 incorrect answers for your question.");
-        return;
-}
+    }
 }
 
 questionCounter++;
@@ -37,21 +36,21 @@ function generateRandomOptions(correctAnswer, wrongAnswers){
     return pickedThree.sort(() => Math.random() - 0.5);
 }
 
-// // update the json file and send to server
-// fetch('http://localhost:3000/submitQuestion',{
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(newQuestion),
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     alert("Question submitted successfully!");
-//   })
-//   .catch((error) => {
-//     console.error('Error:', error);
-//     alert("Error submitting question. Please try again.");
-//   });
+// update the json file and send to server
+fetch('http://localhost:8000/submit-questions',{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newQuestion),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    alert("Question submitted successfully!");
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert("Error submitting question. Please try again.");
+  });
   
