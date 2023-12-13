@@ -4,12 +4,15 @@ function submitQuestion(){
     var questionText = document.getElementById('question-text').value;
     var correctAnswer = document.getElementById('correct-answer').value;
     var wrongAnswers = document.getElementById('wrong-answers').value.split(',');
-}
 
-// this checks if the user has input more than five potential distractor questiosn
-if(wrongAnswers.length < 3 || wrongAnswers.length >= 5){
-    alert("Please provide 3 to 5 incorrect answers for your question.");
-    return;
+    /* 
+    ** this is an error check again the user either not putting enough distractor questions or 
+    ** if they put more than five potential distractor questiosn
+    */
+    if(wrongAnswers.length < 3 || wrongAnswers.length >= 5){
+        alert("Please provide 3 to 5 incorrect answers for your question.");
+        return;
+}
 }
 
 questionCounter++;
