@@ -84,16 +84,8 @@ app.use("/", express.static(submitDir));
 var menuDir = path.join(__dirname, "menu/")
 app.use("/", express.static(menuDir));
 
-app.use("/", express.static("/"));
-
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
-
-
 app.post('/submit-questions', function (req, res, next) {
   console.log("body", req.body)
-  var totalNum = data.total
   if (req.body && req.body.question && req.body.correct && req.body.incorrect) {
     data.push({
       question: req.body.question,
@@ -122,8 +114,10 @@ app.post('/submit-questions', function (req, res, next) {
 app.post('/check-answer', function(req, res, next) {
   console.log(req.body)
   if (req.body && req.body.question && req.body.answer) {
-    var qIndex = data.questions.findIndex(req.body.question)
-    if (index === -1) {
+    // get index in 'questions' array where the object has a 'question' matching the one in the body
+    // https://www.tutorialrepublic.com/faq/how-to-find-an-object-by-property-value-in-an-array-of-javascript-objects.php
+    var qIndex = data.questions.findIndex(item => item.question === req.body.question)
+    if (qindex === -1) {
       res.status(500).send(
         "Unable to find matching question"
       )
@@ -145,6 +139,12 @@ app.post('/check-answer', function(req, res, next) {
     )
   }
 })
+
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.use("/", express.static("/"));
 
 
 app.listen(8000, function (err) {
