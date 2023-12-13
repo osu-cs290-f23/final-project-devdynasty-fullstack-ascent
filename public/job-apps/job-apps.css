@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'sourcecode';
-    src: url('/public/src/Source_Code_Pro/static/SourceCodePro-SemiBold.ttf') format('truetype');
+    src: url('/src/Source_Code_Pro/static/SourceCodePro-SemiBold.ttf') format('truetype');
     font-weight: bold;
 }
 
@@ -22,6 +22,7 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
+    max-height: 100%;
 
     /* TESTING */
     z-index: 0;
@@ -32,8 +33,10 @@ canvas {
     position: fixed;
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100%;
     height: 100%;
+    min-height: 0;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,6 +47,8 @@ canvas {
     TODO: standardize this
     */
     font-size: 20px;
+    height: 15vh;
+    min-height: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -60,7 +65,9 @@ canvas {
 
 .jobs-container {
     display: flex;
+    max-height: 85%;
     height: 85%;
+    min-height: 0;
 }
 
 .job-container {
@@ -72,13 +79,14 @@ canvas {
     flex-direction: column;
     overflow-y: scroll;
     width: 100%;
-    height: auto;
+    height: 85vh;
+    min-height: 0;
     max-height: 100%;
     border-radius: 30px;
     padding-top: 0px;
     padding-right: 15px;
     padding-left: 15px;
-    margin: 1%;
+    margin: 0;
 }
 
 .job-two-column {
@@ -104,6 +112,7 @@ canvas {
 .apply-button {
     width: min-content;
     height: min-content;
+    margin: 5%;
 }
 
 h1 {
@@ -150,6 +159,7 @@ button {
     font-size: 20px;
     margin-right: 0;
     padding:10px;
+    margin-top: 10px;
 }
 
 button:hover {
