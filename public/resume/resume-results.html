@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="nextpage.css">
-    <title>Next Page</title>
+    <link rel="stylesheet" href="resume-results.css">
+    <title>Resume Results</title>
 </head>
 <body>
 
     <div>
-        <h1>Interview Result</h1>
+        <h1>Resume Results</h1>
         <p id="resultMessage"></p>
         <div id="buttonsContainer"></div>
     </div>
@@ -27,7 +27,7 @@
             const takeInterviewButton = document.createElement("button");
             takeInterviewButton.textContent = "TAKE INTERVIEW";
             takeInterviewButton.onclick = function () {
-                window.location.href = "interview.html";
+                window.location.href = "/?nextScene=true";
             };
             buttonsContainer.appendChild(takeInterviewButton);
         } else {
@@ -35,13 +35,13 @@
             const goHomeButton = document.createElement("button");
             goHomeButton.textContent = "GO HOME";
             goHomeButton.onclick = function () {
-                window.location.href = "/?nextScene=true";
+                window.location.href = "/";
             };
 
             const goBackToResumeButton = document.createElement("button");
             goBackToResumeButton.textContent = "GO BACK TO RESUME PAGE";
             goBackToResumeButton.onclick = function () {
-                window.location.href = "/";
+                window.location.href = "/resume";
             };
 
             buttonsContainer.appendChild(goHomeButton);

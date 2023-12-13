@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz End Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .end-container {
+            text-align: center;
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: green;
+            margin-top: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .missed-questions {
+            color: #ff0000; /* Red color for missed questions */
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        button#end-game {
+            background-color: #dc3545; /* Bootstrap danger color */
+            color: #fff;
+        }
+
+        button#restart-game {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="end-container">
+        <h1>You didn't get the offer.</h1>
+        <h2>Better luck next time!</h2>
+
+        <div class="button-container">
+            <button id="end-game" onclick="endGame()">End Game</button>
+            <button id="restart-game" onclick="restartGame()">Restart Game</button>
+        </div>
+    </div>
+
+    <script>
+        function endGame() {
+            // Redirect to the Thank You page
+            window.location.href = "/thankyou.html";
+        }
+
+        function restartGame() {
+            // Redirect to the index.html page
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>
+

@@ -10,11 +10,17 @@ body{
     height: 100vh;
 }
 
+
+span {
+    color: black;
+}
+
 #main{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    z-index: 1;
 }
 
 #dialogueBox-container{

@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <title>DevDynasty - Job Roles</title>
 
-  <link rel="stylesheet" href="/public/job-apps/job-apps.css">
+  <link rel="stylesheet" href="/job-apps/job-apps.css">
   <link rel="icon" type="image/png" href="/img/devdynasty-desk.png">
 
 </head>
 
 <body>
-  <script type="module" src="/public/job-apps/job-apps.js"></script>
+  <script type="module" src="/job-apps/job-apps.js"></script>
   <div class="content">
     <div class="instructions">
       <p class="p-instructions">Choose an internship to apply to:</p>
@@ -24,6 +24,9 @@
             <p class="subtitle"><strong>Company size:</strong> 1,000,000 - 5,000,000 employees</p>
             
           </hgroup>
+          <button type="button" id="big-apply" class="job-two-column-small apply-button">
+            Apply
+          </button>
         </div>
 
         <h2>Description:</h2>
@@ -105,9 +108,6 @@
           BiggCorp is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive
           environment for all employees.
         </footer>
-        <button type="button" id="big-apply">
-          Apply
-        </button>
 
       </div>
 
@@ -117,6 +117,9 @@
             <h1>SpeedCo: Full Stack Development Intern</h1>
             <p class="subtitle"><strong>Company size:</strong> 10-50 employees</p>
           </hgroup>
+          <button type="button" id="small-apply" class="job-two-column-small apply-button">
+            Apply
+          </button>
           
         </div>
 
@@ -192,9 +195,6 @@
           SpeedCo is an equal opportunity employer. We encourage applications from candidates of all backgrounds and
           experiences.
         </footer>
-        <button type="button" id="small-apply">
-          Apply
-        </button>
       </div>
     </div>
 </body>

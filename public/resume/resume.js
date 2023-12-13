@@ -3,23 +3,23 @@ let skillsCount = 0;
 let skills2Count = 0;
 let skills3Count = 0;
 
-// Arrays for good and bad skills
+// Arrays for good and meh skills
 const goodSkills1 = ["node.js", "python", "javascript", "html & css", "REACT", "SQL", "Database design", "Express.js", "AWS", "Docker"];
-const badSkills1 = ["Microsoft Excel", "Graphic Design", "Data Entry","Apache", "MASM", "C#", "Customer Service", "MATLAB"];
+const mehSkills1 = ["Microsoft Excel", "Graphic Design", "Data Entry","Customer Service", "MATLAB"];
 
 
-const goodSkills2 = ["Software Engineering Intern at ABC Innovations", "IT Project Manager at Global Solutions", "Front-End Developer Intern at TechCraft Studios", "Teaching Assistant at Mary Coding Camp", "Quality Assurance Part-Time Intern at Intel", "Google Cybersecurity Certification"];
-const badSkills2 = ["Data Entry Summer Job at FedEx", "Volunteer for E-commerce Overhaul", "Barista at Starbucks"];
+const goodSkills2 = ["Front-End Developer Intern at TechCraft Studios", "Volunteer Teacher at Mary Coding Camp", "Quality Assurance Job Shadow at Intell", "Gogle Cybersecurity Fundamentals Certification"];
+const mehSkills2 = ["Data Entry Job at FebEx", "Barista at Storbucks"];
 
 
-const goodSkills3 = ["Secure Blogging Platform with Multi-Factor Authentication with Firebase", "Portfolio Website using React", "Social Media Metrics Dashboard","Metadata Search Application using Spotify and Genius API" ];
-const badSkills3 = ["Customer Service Spreadsheet", "To Do List App", "Entrepreneurial Mindset Vlog Channel on Youtube"];
+const goodSkills3 = ["Blogging Platform with Firebase Authentication", "Portfolio Website using React", "Metadata Search Application using Spotify and Genius API" ];
+const mehSkills3 = ["Customer Service Spreadsheet", "Entrepreneurial Mindset Vlog Channel on Youtube"];
 
 
 // Point system
 const pointSystem = {
     goodSkill: 1, // Points for each good skill
-    badSkill: 0, // Points for each bad skill
+    mehSkill: 0, // Points for each meh skill
     //okaySkill: 0.5, // Points for each okay skill
 };
 
@@ -76,18 +76,18 @@ function addToBox(data, targetId) {
 }
 
 
-function calculatePoints(goodSkills, badSkills, userSkills) {
+function calculatePoints(goodSkills, mehSkills, userSkills) {
     let overallPoints = 0;
 
     userSkills.forEach(skill => {
         const lowercaseSkill = skill.toLowerCase();
         if (goodSkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
             overallPoints += pointSystem.goodSkill;
-        } else if (badSkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
-            // No points deducted for bad skills
+        } else if (mehSkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
+            // No points deducted for meh skills
 
         } else {
-            console.log(`Unknown skill: ${skill}`);
+            console.log('Unknown skill: ${skill}');
         }
     });
 
@@ -96,7 +96,7 @@ function calculatePoints(goodSkills, badSkills, userSkills) {
 
 function redirectToNextPage(hasInterviewOffer) {
     sessionStorage.setItem("interviewResult", hasInterviewOffer ? "Congratulations! You got an interview offer!" : "Sorry, you did not qualify for an interview offer.");
-    window.location.href = "nextpage.html";
+    window.location.href = "/resume-results";
 }
 
 function checkInterviewOffer() {
@@ -104,12 +104,12 @@ function checkInterviewOffer() {
     const otherSkills = getSkillsFromList("otherSkillsList");
     const projectsSkills = getSkillsFromList("projectsList");
 
-    const overallPoints1 = calculatePoints(goodSkills1, badSkills1,  otherSkills);
-    const overallPoints2 = calculatePoints(goodSkills2, badSkills2,  workExperienceSkills);
-    const overallPoints3 = calculatePoints(goodSkills3, badSkills3,  projectsSkills);
+    const overallPoints1 = calculatePoints(goodSkills1, mehSkills1,  otherSkills);
+    const overallPoints2 = calculatePoints(goodSkills2, mehSkills2,  workExperienceSkills);
+    const overallPoints3 = calculatePoints(goodSkills3, mehSkills3,  projectsSkills);
 
     const hasInterviewOffer = overallPoints1 >= 3 && overallPoints2 >= 3 && overallPoints3 >= 3;
-
+    console.log(overallPoints1, "~~~", overallPoints2, "~~~", overallPoints3);
     redirectToNextPage(hasInterviewOffer);
 }
 

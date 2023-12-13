@@ -62,7 +62,7 @@ document.addEventListener('mousemove', function(e){
   targetLookAt.y = -mouseY;
 })
 
-const scenePath = 'public/models/scene.gltf'
+const scenePath = 'src/models/scene.gltf'
 let model;
 let clips;
 
@@ -160,7 +160,7 @@ document.getElementById('begin-button').addEventListener('click', function(){
 
   // Probably going to want a less exposing way to get here
   setTimeout(function () {
-    window.location.href = 'public/job-apps/job-apps.html';
+    window.location.href = '/job-apps';
   }, 1500);
 
 });
@@ -174,6 +174,9 @@ if (nextSceneParam === 'true') {
   const welcomeContainer = document.querySelector('.welcome-container');
   welcomeContainer.parentNode.removeChild(welcomeContainer);
   // DYNAMICALLY ADD INTERVIEW CONTENT HERE
+  setTimeout(function () {
+    window.location.href = '/interview';
+  }, 5800);
 
 }
 

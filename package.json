@@ -1,6 +1,15 @@
 {
+  "name": "devdynasty",
+  "scripts": {
+    "build": "echo 'Nothing to build yet'",
+    "prestart": "npm run build",
+    "start": "node app.js",
+    "predev": "npm run build",
+    "dev": "npx vite --host"
+  },
   "dependencies": {
     "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
     "node": "^21.2.0",
     "three": "^0.153.0"
   },

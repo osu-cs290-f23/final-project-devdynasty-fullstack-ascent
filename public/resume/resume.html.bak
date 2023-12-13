@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resume.css">
+
+    <style>
+        /* Add styles for the image modal */
+        #imageModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #expandedImage {
+            max-width: 80%;
+            max-height: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <title>Interactive Resume</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>Interactive Resume</h1>
+        <div class="resume-container">
+            <div class="form-section" id="personalInformationSection">
+                
+                <!-- Personal info Box -->
+                <h2>Personal Information</h2>
+                <div class="personal-info">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" value="Robin Hess" readonly>
+                </div>
+                <div class="personal-info">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" value="20" readonly>
+                </div>
+                <div class="personal-info">
+                    <label for="position">Position Applying For:</label>
+                    <input type="text" id="position" value="Full Stack Developer Intern" readonly>
+                </div>
+            </div>
+
+            <!-- Apply Box -->
+            <div class="apply-box">
+                <!-- ... (existing code) -->
+                <h2>Apply</h2>
+                <button id="applyButton">APPLY</button>
+            </div>
+
+            <!-- Resume Image -->
+            
+            <div class="resume-image" onclick="expandImage()">
+                <h2>Job Details</h2>
+                <img src="Job.png" alt="Resume Image">
+            </div>
+
+            <!-- Image Modal -->
+            <div id="imageModal" onclick="closeImageModal()">
+                <img id="expandedImage" src="" alt="Expanded Image">
+            </div>
+
+            <!-- Skills & Experience Boxes -->
+            <div class="skills-container">
+                <!-- Skills & Experience Box 1 -->
+                <div class="skill-box" id="skillsBox" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
+        
+                    <h2>Other Skills</h2>
+                    <!-- Add 16 draggable skills without remove buttons -->
+                    <div style="display: flex;margin: auto;">
+                        <div style="display: flex;flex-direction: column;">
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
+                           
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
+                          
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript
+                            </div>
+                            
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;">
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Database Design')">
+                                Database Design</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'AWS')">AWS</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Docker')">Docker</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Microsoft Excel')">
+                                Microsoft Excel</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry')">Data Entry
+                            </div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Customer Service')">
+                                Customer Service</div>
+                        </div>
+                        <div style="display: flex;flex-direction: column;">
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'MASM')">MASM</div>
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'MATLAB')">MATLAB</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Graphic Design')">Graphic
+                                Design</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Express.js')">Express.js
+                            </div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Apache')">Apache</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'C#')">C#</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Skills & Experience Box 2 -->
+                <div class="skill-box" id="skillsBox2" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
+                    <!-- Add 10 draggable skills without remove buttons -->
+                    
+                    <h2>Work Experiences</h2>
+
+
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry Job at FebEx')">Data
+                        Entry Job at FebEx</div>
+
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Volunteer Teacher at Mary Coding Camp')">Volunteer Teacher at Mary
+                        Coding Camp</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Quality Assurance Job Shadow at Intell')">Quality Assurance Job Shadow at Intell
+                    </div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Gogle Cybersecurity Fundamentals Certification')">
+                        Gogle Cybersecurity Fundamentals Certification</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Front-End Developer Intern at TechCraft Studios')">Front-End Developer Intern at
+                        TechCraft Studios</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Barista at Storbucks ')">Barista at Storbucks </div>
+
+                </div>
+
+                <!-- Skills & Experience Box 3 -->
+                <div class="skill-box" id="skillsBox3" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
+                    <!-- Add 10 draggable skills without remove buttons -->
+                   
+                    <h2>Projects</h2>
+                   
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Blogging Platform with Firebase Authentication')">
+                        Blogging Platform with Firebase Authentication</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Portfolio Website using React')">Portfolio
+                        Website using React</div>
+                   
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Customer Service Spreadsheet')">Customer Service Spreadsheet</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Entrepreneurial Mindset Vlog Channel on Youtube')">Entrepreneurial Mindset Vlog Channel on Youtube</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Metadata Search Application using Spotify and Genius API')">Metadata Search Application using Spotify and Genius API</div>
+                 
+                </div>
+            </div>
+
+            <!-- Boxes for Work Experience, Projects, and Other Skills -->
+            <div class="drag-drop-section" id="workExperienceSection" ondrop="drop(event, 'workExperienceList')"
+                ondragover="allowDrop(event)">
+                <h2>Work Experiences</h2>
+                <ul id="workExperienceList" class="droppable"></ul>
+            </div>
+
+            <div class="drag-drop-section" id="projectsSection" ondrop="drop(event, 'projectsList')"
+                ondragover="allowDrop(event)">
+                <h2>Projects</h2>
+                <ul id="projectsList" class="droppable"></ul>
+            </div>
+
+            <div class="drag-drop-section" id="otherSkillsSection" ondrop="drop(event, 'otherSkillsList')"
+                ondragover="allowDrop(event)">
+                <h2>Other Skills</h2>
+                <ul id="otherSkillsList" class="droppable"></ul>
+            </div>
+        </div> <!-- Close the .skills-container div -->
+    </div>
+
+    <script src="resume.js"></script>
+
+    <script>
+        // Function to expand the image and show the modal
+        function expandImage() {
+            var modal = document.getElementById("imageModal");
+            var image = document.getElementById("expandedImage");
+            var originalImage = document.querySelector(".resume-image img");
+
+            image.src = originalImage.src;
+            modal.style.display = "flex";
+        }
+
+        // Function to close the image modal
+        function closeImageModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

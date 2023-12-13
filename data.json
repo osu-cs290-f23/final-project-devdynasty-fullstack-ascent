@@ -1,0 +1,32 @@
+{
+  "total": 3,
+  "questions": [
+    {
+      "question": "How have you dealt with a team member not pulling their weight in the past?",
+      "correct": "If I observe a teammate falling behind, my first step would be to organize a team check-in meeting. This allows for an open discussion for everyone to talk about potential concerns about the workload, challenges, etc.",
+      "incorrect": [
+        "If a teammate is slacking off, I would probably ignore it until the last minute or I might mention it to the project manager, but I wouldn’t want to get too involved.",
+        "I’d probably pick up their slack and do their part myself. It’s easier than dealing with confrontation, and I don’t want the project to suffer because of someone else’s laziness.",
+        "I probably wouldn't do anything. It's the manager's responsibility to make sure everyone is doing what they are supposed to be doing."
+      ]
+    },
+    {
+      "question": "Describe a time when you faced a tight deadline or a high-pressure situation. How did you handle the stress, and what was the outcome?",
+      "correct": "There was an additional feature that my team was supposed to implement for a big assignment, but we missed it until a few days before the deadline. We communicated effectively about what we would need to change, re-evaluated the flow of our program, and allocated ourselves in such a way that we were able to complete the assignment in its entirety.",
+      "incorrect": [
+        "There was an additional feature that my team was supposed to implement for a big assignment, but we missed it until a few days before the deadline. We ended up not adding it because we only had a few days and we'd spent so much time on it already.",
+        "There was an additional feature that my team was supposed to implement for a big assignment, but we missed it until a few days before the deadline. I wasn't the team leader so I didn't bring it up, because it wasn't really my responsibility. In the project review I explained to the professor that it wasn't my fault.",
+        "There was an additional feature that my team was supposed to implement for a big assignment, but we missed it until a few days before the deadline. We complained to the professor that they were asking for too much in the assignment. We had other classes that we needed to focus on."
+      ]
+    },
+    {
+      "question": "Describe a situation where you had to quickly learn a new technology or programming language. How did you go about it, and what was the outcome?",
+      "correct": "A class I was taking in the Winter required students to know Python. Over the break I spent time self-learning through online resources, Python documentation, and mock projects on Youtube.",
+      "incorrect": [
+        "A class I was taking in the Winter required students to know Python. I ended up dropping the class. There was no way I could learn a new language in such a short amount of time.",
+        "A class I was taking in the Winter required students to know Python. I looked up a few videos on Youtube and ended up using ChatGPT throughout the majority of the class. I didn't learn it super thoroughly, but enough to know how to ask ChatGPT to do my homework.",
+        "A class I was taking in the Winter required students to know Python. I didn't have time over break to learn it myself so during the class I relied on my classmates and the TAs to walk me through everything."
+      ]
+    }
+  ]
+}
