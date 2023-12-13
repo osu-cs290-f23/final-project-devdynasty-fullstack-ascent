@@ -9,8 +9,8 @@ function submitQuestion(){
     ** this is an error check again the user either not putting enough distractor questions or 
     ** if they put more than five potential distractor questiosn
     */
-    if(wrongAnswers.length < 3 || wrongAnswers.length > 5){
-        alert("Please provide 3 to 5 incorrect answers for your question.");
+    if(wrongAnswers.length < 3 || wrongAnswers.length > 3){
+        alert("Please provide 3 incorrect answers for your question.");
         return;
     }
 

@@ -176,7 +176,7 @@ if (nextSceneParam === 'true') {
   // DYNAMICALLY ADD INTERVIEW CONTENT HERE
   setTimeout(function () {
     window.location.href = '/interview';
-  }, 1500);
+  }, 5800);
 
 }
 
