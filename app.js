@@ -79,6 +79,9 @@ var jobAppsDir = path.join(__dirname, "public/job-apps/")
 app.use("/", express.static(jobAppsDir));
 
 
+var interviewDir = path.join(__dirname, "public/interview/")
+app.use("/", express.static(interviewDir));
+
 var resumeDir = path.join(__dirname, "public/resume/")
 app.use("/", express.static(resumeDir));
 
