@@ -1,5 +1,5 @@
 {
-  "total": 3,
+  "total": 4,
   "questions": [
     {
       "question": "How have you dealt with a team member not pulling their weight in the past?",
@@ -26,6 +26,15 @@
         "A class I was taking in the Winter required students to know Python. I ended up dropping the class. There was no way I could learn a new language in such a short amount of time.",
         "A class I was taking in the Winter required students to know Python. I looked up a few videos on Youtube and ended up using ChatGPT throughout the majority of the class. I didn't learn it super thoroughly, but enough to know how to ask ChatGPT to do my homework.",
         "A class I was taking in the Winter required students to know Python. I didn't have time over break to learn it myself so during the class I relied on my classmates and the TAs to walk me through everything."
+      ]
+    },
+    {
+      "question": "What grade should team 2 earn?",
+      "correct": "A",
+      "incorrect": [
+        "B",
+        "C",
+        "D"
       ]
     }
   ]
