@@ -24,7 +24,7 @@ npm start
 # Screenshots
 <img src="readme/staticfront.png">
 
-<img src="readme/front.gif">
+<img src="readme/front.gif" width=1000px>
 
 <img src="readme/apps.gif">
 
