@@ -22,20 +22,21 @@ npm start
 6. Good luck! 🖥
 
 # Screenshots
+<img src="readme/staticfront.png">
 
-<img src="readme/front.gif" width=600px>
+<img src="readme/front.gif">
 
-<img src="readme/apps.gif" width=600px>
+<img src="readme/apps.gif">
 
-<img src="readme/resume.gif" width=600px>
+<img src="readme/resume.gif">
 
-<img src="readme/interview.gif" width=600px>
+<img src="readme/interview.gif">
 
-<img src="readme/menu.gif" width=600px>
+<img src="readme/menu.gif">
 
-<img src="readme/noresume.png" width=600px>
+<img src="readme/noresume.png">
 
-<img src="readme/nointerview.png" width=600px>
+<img src="readme/nointerview.png">
 
-<img src="readme/ending.png" width=600px>
+<img src="readme/ending.png">
 
