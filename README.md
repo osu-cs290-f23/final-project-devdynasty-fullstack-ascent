@@ -26,17 +26,17 @@ npm start
 
 <img src="readme/front.gif" width=1000px>
 
-<img src="readme/apps.gif">
+<img src="readme/apps.gif" width=1000px>
 
-<img src="readme/resume.gif">
+<img src="readme/resume.gif" width=1000px>
 
-<img src="readme/interview.gif">
+<img src="readme/interview.gif" width=1000px>
 
-<img src="readme/menu.gif">
+<img src="readme/menu.gif" width=1000px>
 
-<img src="readme/noresume.png">
+<img src="readme/noresume.png" width=1000px>
 
-<img src="readme/nointerview.png">
+<img src="readme/nointerview.png" width=1000px>
 
-<img src="readme/ending.png">
+<img src="readme/ending.png" width=1000px>
 
