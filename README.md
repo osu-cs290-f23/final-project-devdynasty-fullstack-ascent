@@ -1,6 +1,6 @@
-# DevDynasty: Fullstack Ascent 💻📈
+# DevDynasty: Full-Stack Ascent 💻📈
 
-Play as a computer science major undergoing the application process for a full-stack developer internship! You'll experience resume building, choosing a company to apply to, and interviews. Will you get the offer?!
+Play as a computer science major undergoing the application process for a full-stack developer internship! You'll experience resume building, choosing a company to apply to, and an interview. Will you get the offer?!
 
 # CS 290 Final Project
 
